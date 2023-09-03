@@ -41,10 +41,10 @@ const input = {
 
 /* GET home page. */
 router.post("/send-email", async (req, res) => {
-  input.Destination.ToAddresses = [req.addresses];
-  input.Source = req.source;
-  input.Message.Subject.Data = req.subject;
-  input.Message.Body = req.body;
+  input.Destination.ToAddresses = [req.body.addresses];
+  input.Source = req.body.source;
+  input.Message.Subject.Data = req.body.subject;
+  input.Message.Body.Html.Data = req.body.body;
 
   const command = new SendEmailCommand(input);
 
@@ -52,7 +52,7 @@ router.post("/send-email", async (req, res) => {
     const response = await client.send(command);
     res.json(response);
   } catch (error) {
-    res.json(response);
+    res.json(error);
   }
 });
 
