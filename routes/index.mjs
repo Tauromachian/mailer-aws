@@ -1,6 +1,8 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses"; // ES Modules import
 import express from "express";
+import dotenv from "dotenv";
 
+dotenv.config();
 const router = express.Router();
 
 const client = new SESClient({
