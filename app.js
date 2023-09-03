@@ -2,15 +2,24 @@ var createError = require("http-errors");
 var express = require("express");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const cors = require("cors");
 
 var indexRouter = require("./routes/index.mjs");
 
 var app = express();
 
+const allowedOrigin = process.env.ALLOWED_ORIGIN;
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(
+  cors({
+    origin: allowedOrigin,
+  })
+);
 
 app.use("/", indexRouter);
 
