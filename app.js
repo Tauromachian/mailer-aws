@@ -1,12 +1,12 @@
-var createError = require("http-errors");
-var express = require("express");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const createError = require("http-errors");
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 const cors = require("cors");
 
-var indexRouter = require("./routes/index.mjs");
+const indexRouter = require("./routes/index.mjs");
 
-var app = express();
+const app = express();
 
 const allowedOrigin = process.env.ALLOWED_ORIGIN;
 
