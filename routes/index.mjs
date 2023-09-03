@@ -52,7 +52,7 @@ router.post("/send-email", async (req, res) => {
     const response = await client.send(command);
     res.json(response);
   } catch (error) {
-    res.json(error);
+    res.status(500).json(error);
   }
 });
 
