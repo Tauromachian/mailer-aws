@@ -20,7 +20,6 @@ const input = {
     // Destination
     ToAddresses: [
       // AddressList
-      "betankore@yahoo.com",
     ],
   },
   Message: {
