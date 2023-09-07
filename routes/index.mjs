@@ -15,7 +15,7 @@ const client = new SESClient({
 
 const input = {
   // SendEmailRequest
-  Source: "soporte@succubus-bdsm.com", // required
+  Source: "", // required
   Destination: {
     // Destination
     ToAddresses: [
