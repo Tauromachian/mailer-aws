@@ -32,7 +32,7 @@ const input = {
     Body: {
       // Body
       Html: {
-        Data: "<p>This is the body of the test message</p>", // required
+        Data: ""// required
       },
     },
   },
