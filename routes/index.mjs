@@ -32,7 +32,7 @@ const input = {
     Body: {
       // Body
       Html: {
-        Data: ""// required
+        Data: "", // required
       },
     },
   },
@@ -41,7 +41,7 @@ const input = {
 /* GET home page. */
 router.post("/send-email", async (req, res) => {
   input.Destination.ToAddresses = [req.body.addresses];
-  input.Source = 'support@piknpac.com';
+  input.Source = process.env.SOURCE_MAIL;
   input.Message.Subject.Data = req.body.subject;
   input.Message.Body.Html.Data = req.body.body;
 
